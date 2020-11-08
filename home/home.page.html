@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      SEMM3233 - Control
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="stacked">Student Name</ion-label>
+    <ion-input [(ngModel)]="student_name"></ion-input>
+  </ion-item>
+
+  <div>
+    <ion-button (click)="getlist()">FIND</ion-button>
+    <ion-button (click)="add()">ADD</ion-button>
+    <ion-button (click)="all_list()">LIST ALL</ion-button>
+    <ion-button (click)="deletelist()">DELETE</ion-button>
+  </div>
+
+
+  <ion-list>
+
+    <ion-list-header>
+      Attendance
+    </ion-list-header>
+
+    <ion-item *ngFor="let x of data_list;let index=index">
+      <ion-label>
+        <p>{{index+1}} {{x.name}}</p>
+        <p>{{x.date}} {{x.time}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
